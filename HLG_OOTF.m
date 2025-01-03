@@ -13,10 +13,10 @@ function [E_, F_D] = HLG_OOTF(E, LW)
     end
     alpha=LW;
     E_=zeros(size(E));
-    E_(:,:,1) = LW * Y_s.^(gamma - 1) .*E(:,:,1);
-    E_(:,:,2) = LW * Y_s.^(gamma - 1) .* E(:,:,2);
-    E_(:,:,3) = LW * Y_s.^(gamma - 1) .* E(:,:,3);
-    F_D = alpha * Y_s.^gamma;
+    E_(:,:,1) = alpha * Y_s.^(gamma - 1) .*E(:,:,1);
+    E_(:,:,2) = alpha * Y_s.^(gamma - 1) .* E(:,:,2);
+    E_(:,:,3) = alpha * Y_s.^(gamma - 1) .* E(:,:,3);
+    F_D = alpha * Y_s.^(gamma-1).*E;
 
 end
 

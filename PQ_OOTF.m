@@ -4,7 +4,7 @@ function FD = PQ_OOTF(E)
     % The values E, RS, GS, BS, YS, IS are in the range [0:1]
     % E_prime is a non-linear representation of E
     % FD is the luminance of a displayed linear component (RD, GD, BD; YD; or ID)
-    threshold = 0.0031308; 
+    threshold = 0.0003024; 
     % 初始化 E' (G709 操作)
     E_prime = zeros(size(E));
     mask1 = E > threshold;

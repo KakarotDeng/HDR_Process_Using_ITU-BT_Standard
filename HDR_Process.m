@@ -23,7 +23,7 @@ end
 switch Signal_Type
     case 'PQ'
         Lmin=1/10000;
-        Lmax=100/10000;
+        Lmax=2000/10000;
         LB=min(Input_hdr(:));
         LW=max(Input_hdr(:));
         ColorSpace='YRGB';
@@ -56,17 +56,23 @@ switch Signal_Type
         TMed_Img=HLG_OETF(TMed_Img);
         
 end
+
+% Save the image
+% TMed_Img=uint16(65535*TMed_Img);
+% imwrite(TMed_Img, 'E:\testimg\lightbox_2000.tiff')
+
+
 %% Visualize
 
-figure(1);
+subplot(2, 2, 1); % 1 row, 3 columns, position 1
 imshow(Input_hdr);
 title('Linear HDR');
 
-figure(2);
+subplot(2, 2, 2); % 1 row, 3 columns, position 2
 imshow(nonlinear_hdr);
 title('Nonlinear HDR');
 
-figure(3);
+subplot(2, 2, 3); % 1 row, 3 columns, position 3
 imshow(TMed_Img);
 title('Image on the Target Display');
 

@@ -25,8 +25,8 @@ function Target_Com = PQ_EETF(Ec,LB,LW,Lmin,Lmax)
     Vist2(Vist < KS) = Vist(Vist < KS);  % 1:1映射
     Vist2(Vist >= KS) = HermiteSpline(Vist(Vist >= KS), KS, maxLum); % Spline映射
     Vist3 =  Vist2 + minLum * (1 - Vist2).^4;
-    figure(4);
-    plot(Vist,Vist3)
+    % figure(4);
+    % plot(Vist,Vist3)
     
     % Target display PQ values
     Target_Com=E_f*(PQ_OETF(LW)-PQ_OETF(LB))+PQ_OETF(LB);

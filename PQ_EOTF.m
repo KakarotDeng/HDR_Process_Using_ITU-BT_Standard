@@ -10,7 +10,6 @@ function FD=PQ_EOTF(E_)
     c2 = 2413 / (2^7);
     c3 = 2392 / (2^7);
     Ep = E_;
-    test=(c2 - c3 * Ep .^ (1/m2));
     Y= (max((Ep .^ (1/m2) - c1),0) ./ (c2 - c3 * Ep .^ (1/m2))) .^ (1/m1); 
     FD=Y;
  
